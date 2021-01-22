@@ -1,0 +1,8 @@
+<% @promotions.each do |promotion| %>
+    <p>Nome: <%= promotion.name %> </p>
+    <p>Descrição: <%= promotion.description %> </p>
+    <p>Código de Cupom:<%= promotion.code %> </p>
+    <p>Porcentagem de Desconto: <%= number_to_percentage(promotion.discount_rate, precision: 2, separator: ',') %> </p>
+    <p>Quantidade: <%= promotion.coupon_quantity %> </p>
+    <p>Vencimento do Cupom: <%= promotion.expiration_date %> </p>
+<% end %>

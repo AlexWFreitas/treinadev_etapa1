@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Linha abaixo é igual
   root 'home#index'
   # Home Controller , Ação Index
+  resources :promotion, only: [:index]
 end
