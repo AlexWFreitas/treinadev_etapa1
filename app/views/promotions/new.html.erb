@@ -1,0 +1,39 @@
+<%= form_with model: @promotion do |f| %>
+    <div>
+         <%= f.label 'Nome:' %><br> 
+        <%= f.text_field :name, id:"Título" %>
+    </div>
+
+    <div>
+        <%= f.label 'Descrição:' %><br>
+        <%= f.text_field :description, id:"Descrição" %>
+    </div>
+
+    <div>
+        <%= f.label 'Código:' %><br>
+        <%= f.number_field :code, id:"Código" %>
+    </div>
+
+    <div>
+        <%= f.label 'Desconto:' %><br>
+        <%= f.text_field :discount_rate, id:"Desconto"  %>
+    </div>
+
+    <div>
+        <%= f.label 'Quantidade:' %><br>
+        <%= f.text_field :coupon_quantity, id:"Quantidade" %>
+    </div>
+
+    <div>
+        <%= f.label 'Data de Término:' %><br>
+        <%= f.text_field :expiration_date, id:"Data de Término" %>
+    </div>
+
+    <div>
+        <%= f.submit "Enviar" %>
+    </div>
+
+    <% if flash[:error] %>
+        <p>Todos campos devem ser preenchidos</p>
+    <% end %>
+<% end %>
