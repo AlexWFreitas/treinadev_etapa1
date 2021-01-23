@@ -1,7 +1,7 @@
 <%= form_with model: @promotion do |f| %>
     <div>
          <%= f.label 'Nome:' %><br> 
-        <%= f.text_field :name, id:"Título" %>
+        <%= f.text_field :name, id:"Nome" %>
     </div>
 
     <div>
@@ -21,16 +21,16 @@
 
     <div>
         <%= f.label 'Quantidade:' %><br>
-        <%= f.text_field :coupon_quantity, id:"Quantidade" %>
+        <%= f.text_field :coupon_quantity, id:"Quantidade de cupons" %>
     </div>
 
     <div>
         <%= f.label 'Data de Término:' %><br>
-        <%= f.text_field :expiration_date, id:"Data de Término" %>
+        <%= f.text_field :expiration_date, id:"Data de término" %>
     </div>
 
     <div>
-        <%= f.submit "Enviar" %>
+        <%= f.submit "Criar promoção" %>
     </div>
 
     <% if flash[:error] %>
