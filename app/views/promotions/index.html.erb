@@ -1,14 +1,12 @@
 <% if @promotions.length > 0 %>
     <% @promotions.each do |promotion| %>
-    <dl>
-        <dt>Nome: </dt>
-        <di><%= link_to promotion.name, promotion_path(promotion) %></di>
-        <dt>Descrição: </dt> 
-        <di><%= promotion.description %> </di>
-        <dt>Porcentagem de Desconto: </dt>
-            <di><%= number_to_percentage(
-            promotion.discount_rate, precision: 2, separator: ',') %> </di>
-            <hr>
+        <p>Nome: <%= link_to promotion.name, promotion_path(promotion) %></p>
+        <p>Descrição:  <%= promotion.description %> </p>
+        <p>Porcentagem de Desconto: 
+            <%= number_to_percentage(
+            promotion.discount_rate, precision: 2, separator: ',') %> 
+        </p>
+        <hr>
     <% end %>
 
 <% else %>
