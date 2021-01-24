@@ -17,7 +17,7 @@ feature 'Admin edits a promotion' do
       fill_in 'Desconto', with: '100'
       fill_in 'Quantidade de cupons', with: '200000'
       fill_in 'Data de término', with: '01/01/2022'
-      click_on 'Criar promoção'
+      click_on 'Editar promoção'
   
       expect(current_path).to eq(promotion_path(Promotion.last))
       expect(page).to have_content('Coronafest')
