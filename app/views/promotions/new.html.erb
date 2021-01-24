@@ -3,37 +3,45 @@
          <%= f.label 'Nome:' %><br> 
         <%= f.text_field :name, id:"Nome" %>
     </div>
-
+    <br>
     <div>
         <%= f.label 'Descrição:' %><br>
         <%= f.text_field :description, id:"Descrição" %>
     </div>
-
+    <br>
     <div>
         <%= f.label 'Código:' %><br>
-        <%= f.number_field :code, id:"Código" %>
+        <%= f.text_field :code, id:"Código" %>
     </div>
-
+    <br>
     <div>
         <%= f.label 'Desconto:' %><br>
         <%= f.text_field :discount_rate, id:"Desconto"  %>
     </div>
-
+    <br>
     <div>
         <%= f.label 'Quantidade:' %><br>
         <%= f.text_field :coupon_quantity, id:"Quantidade de cupons" %>
     </div>
-
+    <br>
     <div>
         <%= f.label 'Data de Término:' %><br>
         <%= f.text_field :expiration_date, id:"Data de término" %>
     </div>
-
+    <br>
     <div>
         <%= f.submit "Criar promoção" %>
     </div>
+<% end %>
 
-    <% if flash[:error] %>
-        <p>Todos campos devem ser preenchidos</p>
-    <% end %>
+<% if @promotion.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@promotion.errors.count, "error") %> have occurred:</h2>
+
+    <ul>
+      <% @promotion.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
