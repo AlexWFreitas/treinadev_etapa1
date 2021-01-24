@@ -1,4 +1,4 @@
-<% if @promotions.length > 0 %>
+<% if @promotions.exists? %>
     <% @promotions.each do |promotion| %>
         <p>Nome: <%= link_to promotion.name, promotion_path(promotion) %></p>
         <p>Descrição:  <%= promotion.description %> </p>
