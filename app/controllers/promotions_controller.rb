@@ -17,7 +17,6 @@ class PromotionsController < ApplicationController
         if @promotion.save
             redirect_to @promotion
         else
-            flash.now[:error] = "Todos campos devem ser preenchidos"
             render :new
         end
     end
