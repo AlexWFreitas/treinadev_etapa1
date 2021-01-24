@@ -6,4 +6,6 @@
 <p>Vencimento do Cupom: <%= @promotion.expiration_date&.strftime("%d/%m/%Y") %> </p>
 
 <p> <%= link_to 'Editar', edit_promotion_path(@promotion) %>
+<p> <%= link_to 'Deletar', promotion_path(@promotion),
+                method: :delete, data: { confirm: "Confirm deletion of this entry" } %>
 <p> <%= link_to 'Voltar', promotions_path %></p>
