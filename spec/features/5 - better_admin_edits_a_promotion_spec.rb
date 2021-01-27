@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin edits a promotion' do
     scenario 'promotion gets updated' do
       # Arrange 
-      promotion = Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
+      promotion = Promotion.create(name: 'Natal', description: 'Promoção de Natal',
                         code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
                         expiration_date: '22/12/2033')
 
@@ -23,7 +23,7 @@ feature 'Admin edits a promotion' do
 
     scenario 'on edit, code must be unique' do
       # Arrange
-      promotion = Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
+      promotion = Promotion.create(name: 'Natal', description: 'Promoção de Natal',
                                     code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
                                     expiration_date: '22/12/2033')
 
@@ -42,7 +42,7 @@ feature 'Admin edits a promotion' do
 
     scenario 'on edit, required fields should be filled' do
       # Arrange
-      promotion = Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
+      promotion = Promotion.create(name: 'Natal', description: 'Promoção de Natal',
                                     code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
                                     expiration_date: '22/12/2033')
       
@@ -61,7 +61,7 @@ feature 'Admin edits a promotion' do
 
     scenario 'description can be empty on update' do
       # Arrange
-      promotion = Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
+      promotion = Promotion.create(name: 'Natal', description: 'Promoção de Natal',
                                     code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
                                     expiration_date: '22/12/2033')
       
