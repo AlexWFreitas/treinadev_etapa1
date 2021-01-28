@@ -1,7 +1,4 @@
 class PromotionsController < ApplicationController
-    def new
-        @promotion = Promotion.new
-    end
 
     def index
         @promotions = Promotion.all
@@ -9,6 +6,10 @@ class PromotionsController < ApplicationController
 
     def show
         @promotion = Promotion.find(params[:id])
+    end
+
+    def new
+        @promotion = Promotion.new
     end
 
     def create
