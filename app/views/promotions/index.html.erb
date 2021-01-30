@@ -4,7 +4,7 @@
         <p>Descrição:  <%= promotion.description %> </p>
         <p>Porcentagem de Desconto: 
             <%= number_to_percentage(
-            promotion.discount_rate, precision: 2, separator: ',') %> 
+            promotion.discount_rate ) %> 
         </p>
         <hr>
     <% end %>

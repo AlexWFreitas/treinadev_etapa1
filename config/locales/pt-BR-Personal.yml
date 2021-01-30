@@ -1,0 +1,55 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        blank: "não pode ficar em branco"
+        taken: "deve ser único"
+    models:
+      promotion: "Promoção"
+    attributes:
+      promotion:
+        name: "Nome"
+        code: "Código"
+        expiration_date: "Data de término"
+        description: "Descrição"
+        coupon_quantity: "Quantidade de cupons"
+        discount_rate: "Desconto"
+
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+
+  number:
+    format:
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage:
+      format:
+        precision: 2
+        delimiter: '.'
+    precision:
+      format:
+        delimiter: '.'
+    human:
+      format:
+        precision: 1
+        delimiter: '.'
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"

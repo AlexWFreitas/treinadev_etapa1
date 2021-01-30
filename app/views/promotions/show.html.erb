@@ -3,7 +3,7 @@
 <p>Código de Cupom:<%= @promotion.code %> </p>
 <p>Porcentagem de Desconto: <%= number_to_percentage(@promotion.discount_rate, precision: 2, separator: ',') %> </p>
 <p>Quantidade: <%= @promotion.coupon_quantity %> </p>
-<p>Vencimento do Cupom: <%= @promotion.expiration_date&.strftime("%d/%m/%Y") %> </p>
+<p>Vencimento do Cupom: <%= I18n.localize @promotion.expiration_date %> </p>
 
 <p> <%= link_to 'Editar', edit_promotion_path(@promotion) %>
 <p> <%= link_to 'Deletar', promotion_path(@promotion),

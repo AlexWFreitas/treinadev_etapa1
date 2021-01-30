@@ -18,7 +18,7 @@ feature 'Admin edits a promotion' do
       expect(promotion.code).to eq('COVID21')
       expect(promotion.discount_rate).to eq(100)
       expect(promotion.coupon_quantity).to eq(200000)
-      expect(promotion.expiration_date.strftime("%d/%m/%Y")).to eq('31/12/2022')
+      expect(I18n.localize( promotion.expiration_date )).to eq('31/12/2022')
     end
 
     scenario 'on edit, code must be unique' do
