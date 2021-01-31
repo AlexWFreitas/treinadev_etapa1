@@ -13,7 +13,7 @@ feature 'Admin edits a promotion' do
       click_on 'Cyber Monday'
       click_on 'Editar'
 
-      expect(page).to have_field('Nome', 'Cyber Monday')
+      expect(page).to have_field('Nome', with: 'Cyber Monday')
 
       fill_in 'Nome', with: 'Carnaval'
       fill_in 'Descrição', with: 'Coronafest'

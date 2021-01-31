@@ -22,3 +22,16 @@
      margin: auto;
      text-align: center;
  }
+
+
+#percentage_field {
+    position: relative;
+}
+
+#percentage_field::after {
+    content: '' attr(unit);
+    position: absolute;
+    top: 2px;
+    left: 47px;
+    font-size: 13px;
+}
