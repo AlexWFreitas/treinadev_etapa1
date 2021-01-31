@@ -3,14 +3,18 @@ require 'rails_helper'
 
 feature 'Admin edits a promotion' do
     scenario 'promotion gets updated' do
-      Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
-                        code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
+      Promotion.create!(name: 'Cyber Monday', coupon_quantity: 90,
+                        description: 'Promoção de Cyber Monday',
+                        code: 'CYBER15', discount_rate: 15,
                         expiration_date: '22/12/2033')
   
       visit root_path
       click_on 'Promoções'
-      click_on 'Natal'
+      click_on 'Cyber Monday'
       click_on 'Editar'
+
+      expect(page).to have_field('Nome', 'Cyber Monday')
+
       fill_in 'Nome', with: 'Carnaval'
       fill_in 'Descrição', with: 'Coronafest'
       fill_in 'Código', with: 'COVID21'
@@ -20,6 +24,7 @@ feature 'Admin edits a promotion' do
       click_on 'Editar promoção'
   
       expect(current_path).to eq(promotion_path(Promotion.last))
+      expect(page).to have_content('Carnaval')
       expect(page).to have_content('Coronafest')
       expect(page).to have_content('COVID21')
       expect(page).to have_content('100')
