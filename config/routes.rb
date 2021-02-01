@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Home Controller , Ação Index
 
   resources :promotions, only: [:index, :show, :create, :new, :edit, :update, :destroy]
+  resources :product_categories, only: %i[ index ]
 end
 
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

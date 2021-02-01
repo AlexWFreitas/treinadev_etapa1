@@ -1,0 +1,10 @@
+<% if @categories.exists? %>
+    <h1>Categorias de Produto</h1>
+    <% @categories.each do |category| %>
+        <%= category.name %>
+        <br>
+    <% end %>
+<% else %>
+    <div class="warning">Não existe uma categoria registrada no banco de dados.</div>
+<% end %>
+
