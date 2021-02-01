@@ -1,0 +1,19 @@
+<%= form_with model: @category do |f| %>
+    <div>
+        <%= f.label :name, 'Nome' %>
+        <br>
+        <%= f.text_field :name %>
+    </div>
+
+    <br>
+
+    <div>
+        <%= f.label :code, 'Código' %>
+        <br>
+        <%= f.text_field :code %>
+    </div>
+
+    <br>
+
+    <%= f.submit %>
+<% end %>

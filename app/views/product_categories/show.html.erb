@@ -1,0 +1,17 @@
+<h1>Detalhes da Categoria <%= @category.name %></h1>
+<br>
+Nome: <%= @category.name %>
+<br>
+<br>
+Código: <%= @category.code %>
+<br>
+<br>
+
+<hr>
+
+<%= link_to "Editar categoria", edit_product_category_path(@category) %>
+
+<br>
+<br>
+
+<%= link_to "Voltar para categorias", product_categories_path %>
