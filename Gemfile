@@ -49,6 +49,9 @@ group :test do
   gem 'capybara'
   # Installs selenium web driver
   gem "selenium-webdriver"
+
+  # Installs webdrivers
+  gem "webdrivers"
   # Installs Shoulda Matchers
   gem 'shoulda-matchers', '~> 4.0'
 

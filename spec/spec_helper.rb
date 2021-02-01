@@ -17,6 +17,7 @@
 
 # Loads capybara
 require 'capybara/rspec'
+require 'selenium-webdriver'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
