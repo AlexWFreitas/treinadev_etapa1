@@ -47,6 +47,8 @@ end
 group :test do
   # Installs capybara
   gem 'capybara'
+  # Installs selenium web driver
+  gem "selenium-webdriver"
   # Installs Shoulda Matchers
   gem 'shoulda-matchers', '~> 4.0'
 

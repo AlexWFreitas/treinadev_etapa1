@@ -16,7 +16,7 @@ feature 'Admin deletes a promotion' do
     visit root_path
     click_on 'Promoções'
     click_on 'Natal'
-    click_on 'Deletar'
+    click_on 'Deletar'    
 
     # Assert
     expect(current_path).to eq promotions_path
