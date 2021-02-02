@@ -7,6 +7,11 @@
 
 <% if flash[:notice] %>
     <%= flash[:notice] %>
+    <br>
+    <% @promotion.coupons.each do |coupon| %>
+        <%= coupon.code %>
+    <% end %>
+    
 <% end %>
 
 <p> <%= link_to 'Emitir cupons', generate_coupons_promotion_path(@promotion), method: :post %>
