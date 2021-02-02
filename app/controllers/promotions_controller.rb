@@ -43,6 +43,13 @@ class PromotionsController < ApplicationController
         redirect_to promotions_path
     end
 
+    def generate_coupons
+        @promotion = Promotion.find(params[:id])
+        Coupon.create!(code: "#{@promotion.code}-0001", promotion: @promotion)
+        flash[:notice] = "Cupons gerados com sucesso"
+        redirect_to @promotion
+    end
+
     private
 
     def promotion_params

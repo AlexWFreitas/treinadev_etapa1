@@ -5,7 +5,13 @@
 <p>Quantidade: <%= @promotion.coupon_quantity %> </p>
 <p>Vencimento do Cupom: <%= I18n.localize @promotion.expiration_date %> </p>
 
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<p> <%= link_to 'Emitir cupons', generate_coupons_promotion_path(@promotion), method: :post %>
 <p> <%= link_to 'Editar', edit_promotion_path(@promotion) %> </p>
 <p> <%= link_to 'Deletar', promotion_path(@promotion),
                 method: :delete, data: { confirm: "Você tem certeza que deseja deletar?" } %> </p>
 <p> <%= link_to 'Voltar', promotions_path %> </p>
+
