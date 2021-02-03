@@ -1,0 +1,16 @@
+pt-BR:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+
+  helpers:
+    submit:
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+
+  number:
+    percentage:
+      format:
+        separator: ","
+        format: "%n%"
+        precision: 2

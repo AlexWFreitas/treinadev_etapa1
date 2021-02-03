@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      promotion: "promoção"
+    attributes:
+      promotion:
+        name: "Nome"
+        code: "Código"
+        expiration_date: "Data de término"
+        description: "Descrição"
+        coupon_quantity: "Quantidade de cupons"
+        discount_rate: "Desconto"

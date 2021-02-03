@@ -1,17 +1,15 @@
 <% if @promotions.exists? %>
     <% @promotions.each do |promotion| %>
-        <p>Nome: <%= link_to promotion.name, promotion_path(promotion) %></p>
-        <p>Descrição:  <%= promotion.description %> </p>
-        <p>Porcentagem de Desconto: 
-            <%= number_to_percentage(
-            promotion.discount_rate ) %> 
+        <p><%= t 'activerecord.attributes.promotion.name' %>: <%= link_to promotion.name, promotion_path(promotion) %></p>
+        <p><%= t 'activerecord.attributes.promotion.description' %>:  <%= promotion.description %> </p>
+        <p><%= t 'activerecord.attributes.promotion.discount_rate' %>: <%= number_to_percentage(promotion.discount_rate ) %> 
         </p>
         <hr>
     <% end %>
 
 <% else %>
-        <div class="warning"> Nenhuma promoção cadastrada</div>
+        <div class="warning"> t 'promotion.warning'</div>
 <% end %>
 
-<p><%= link_to 'Registrar uma promoção', new_promotion_path %></p>
-<p><%= link_to 'Voltar', root_path %></p>
+<p><%= link_to (t 'promotion.create'), new_promotion_path %></p>
+<p><%= link_to (t 'promotion.back'), root_path %></p>

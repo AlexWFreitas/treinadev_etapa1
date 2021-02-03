@@ -1,7 +1,7 @@
-<h1>Promotion System</h1>
-<h3>Boas vindas ao sistema de gestão de promoções</h3>
+<h1><%= t '.title' %></h1>
+<h3><%= t '.title_message' %></h3>
 
-<%= link_to 'Promoções', promotions_path %>
+<%= link_to (t 'promotions'), promotions_path %>
 <br>
 <br>
-<%= link_to 'Categorias', product_categories_path %>
+<%= link_to (t 'product_categories'), product_categories_path %>
