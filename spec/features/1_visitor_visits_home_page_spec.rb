@@ -10,8 +10,7 @@ feature 'Visitor visit home page' do
     visit root_path
 
     # Assert
-    expect(page).to have_content('Promotion System')
-    expect(page).to have_content('Boas vindas ao sistema de gestão de '\
-                                 'promoções')
+    expect(page).to have_content(I18n.t 'home.index.title')
+    expect(page).to have_content(I18n.t 'home.index.title_message')
   end
 end

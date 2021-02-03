@@ -14,9 +14,9 @@
     
 <% end %>
 
-<p> <%= link_to (t 'promotion.generate_coupons'), generate_coupons_promotion_path(@promotion), method: :post %>
-<p> <%= link_to (t 'promotion.edit'), edit_promotion_path(@promotion) %> </p>
-<p> <%= link_to (t 'promotion.delete'), promotion_path(@promotion),
-                method: :delete, data: { confirm: (t "promotion.delete_confirm") } %> </p>
-<p> <%= link_to (t 'promotion.back'), promotions_path %> </p>
+<p> <%= link_to (t '.generate_coupons'), generate_coupons_promotion_path(@promotion), method: :post %>
+<p> <%= link_to (t '.edit'), edit_promotion_path(@promotion) %> </p>
+<p> <%= link_to (t '.delete'), promotion_path(@promotion),
+                method: :delete, data: { confirm: (t ".delete_confirm") } %> </p>
+<p> <%= link_to (t '.back'), promotions_path %> </p>
 

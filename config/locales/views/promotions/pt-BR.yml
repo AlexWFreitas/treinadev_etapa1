@@ -1,10 +1,14 @@
 pt-BR:
-  promotions: "Promoções"
-  promotion: 
-    warning: "Nenhuma promoção cadastrada"
-    create: "Registrar uma promoção"
-    edit: "Editar uma promoção"
-    delete: "Deletar"
-    delete_confirm: "Deseja deletar a promoção?"
-    back: "Voltar"
-    generate_coupons: "Emitir cupons"
+  promotions: 
+    collection_name: "Promoções"
+    index:
+      warning: "Nenhuma promoção cadastrada"
+      create: "Registrar uma promoção"
+      back: "Voltar"
+
+    show:
+      edit: "Editar uma promoção"
+      delete: "Deletar"
+      delete_confirm: "Deseja deletar a promoção?"
+      back: "Voltar"
+      generate_coupons: "Emitir cupons"

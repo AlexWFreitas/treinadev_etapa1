@@ -1,2 +1,3 @@
 pt-BR:
-  product_categories: "Categorias"
+  product_categories:
+    collection_name: "Categorias"
