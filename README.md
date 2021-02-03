@@ -1,24 +1,9 @@
 # README
+This is a project about a promotion system project running on Ruby on Rails for learning purposes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instructions for running:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+clone this repository
+bin/setup
+bundle install
+rails s
