@@ -4,7 +4,7 @@ pt-BR:
     warning: "Nenhuma promoção cadastrada"
     create: "Registrar uma promoção"
     edit: "Editar uma promoção"
-    delete: "Remover uma promoção"
+    delete: "Deletar"
     delete_confirm: "Deseja deletar a promoção?"
     back: "Voltar"
     generate_coupons: "Emitir cupons"

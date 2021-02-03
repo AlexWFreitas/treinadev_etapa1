@@ -3,7 +3,7 @@
 <p><%= t 'activerecord.attributes.promotion.code' %>: <%= @promotion.code %> </p>
 <p><%= t 'activerecord.attributes.promotion.discount_rate' %>: <%= number_to_percentage(@promotion.discount_rate, precision: 2, separator: ',') %> </p>
 <p><%= t 'activerecord.attributes.promotion.coupon_quantity' %>: <%= @promotion.coupon_quantity %> </p>
-<p><%= t 'activerecord.attributes.promotion.expiration_date' %>: <%= @promotion.expiration_date %> </p>
+<p><%= t 'activerecord.attributes.promotion.expiration_date' %>: <%= l @promotion.expiration_date %> </p>
 
 <% if flash[:notice] %>
     <%= flash[:notice] %>

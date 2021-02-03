@@ -1,7 +1,8 @@
-    pt-BR:
-      models:
-        product_category: "categoria"
-      attributes:
-        product_category:
+pt-BR:
+  activerecord:
+    models:
+      product_category: "categoria"
+    attributes:
+      product_category:
         name: "Nome"
         code: "Código"
