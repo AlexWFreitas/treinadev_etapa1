@@ -3,7 +3,7 @@ This is a project about a promotion system running on Ruby on Rails for learning
 
 Instructions for running:
 
-clone this repository
-bin/setup
-bundle install
-rails s
+clone this repository  
+bin/setup  
+bundle install  
+rails s  
