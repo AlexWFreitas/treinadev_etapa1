@@ -73,4 +73,47 @@ describe Promotion do
       expect(promotion.errors[:expiration_date]).to include('não pode ficar em branco')
     end
   end
+
+  context 'update' do
+    it 'after update, value is as expected' do
+      promotion = Promotion.create!(name: 'Carnaval', description: 'Promoção de Carnaval',
+                                    code: 'CARNAVAL10', discount_rate: 10,
+                                    coupon_quantity: 100, expiration_date: '22/12/2033')
+      
+      promotion.update(name: 'Caonaval')
+      promotion.reload.name
+
+      expect(promotion.name).to include('Caonaval')
+    end
+  end
+
+  context '#generate_coupons' do
+    it 'generate coupons of coupon_quantity' do
+      promotion = Promotion.create!(name: 'Carnaval', description: 'Promoção de Carnaval',
+                        code: 'CARNAVAL10', discount_rate: 10,
+                        coupon_quantity: 100, expiration_date: '22/12/2033')
+
+      promotion.generate_coupons!
+
+      expect(promotion.coupons.size).to eq 100
+      codes = promotion.coupons.pluck(:code)
+      expect(codes).to include('CARNAVAL10-0100')
+      expect(codes).to include('CARNAVAL10-0001')
+      expect(codes).not_to include('CARNAVAL10-0101')
+      expect(codes).not_to include('CARNAVAL10-0000')
+    end
+
+    it 'do not generate if error' do
+      promotion = Promotion.create!(name: 'Carnaval', description: 'Promoção de Carnaval',
+                        code: 'CARNAVAL10', discount_rate: 10,
+                        coupon_quantity: 100, expiration_date: '22/12/2033')
+      promotion.coupons.create!(code: 'CARNAVAL10-0030')
+
+      expect { promotion.generate_coupons! }.to raise_error(ActiveRecord::RecordNotUnique)
+
+      promotion.coupons.reload.size
+
+      expect(promotion.coupons.size).to eq(1)
+    end
+  end
 end

@@ -21,3 +21,6 @@ pt-BR:
       delete_confirm: "Deseja deletar a promoção?"
       back: "Voltar"
       generate_coupons: "Emitir cupons"
+    
+    generate_coupons:
+      success: "Cupons gerados com sucesso"
