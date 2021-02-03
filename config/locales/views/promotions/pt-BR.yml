@@ -2,11 +2,20 @@ pt-BR:
   promotions: 
     collection_name: "Promoções"
     index:
+      name: "Nome:"
+      description: "Descrição:"
+      discount_rate: "Desconto:"
       warning: "Nenhuma promoção cadastrada"
       create: "Registrar uma promoção"
       back: "Voltar"
 
     show:
+      name: "Nome:"
+      description: "Descrição:"
+      code: "Código"
+      discount_rate: "Desconto:"
+      coupon_quantity: "Quantidade de cupons:"
+      expiration_date: "Data de término:"
       edit: "Editar uma promoção"
       delete: "Deletar"
       delete_confirm: "Deseja deletar a promoção?"

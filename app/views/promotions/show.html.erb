@@ -1,9 +1,9 @@
-<p><%= t 'activerecord.attributes.promotion.name' %>: <%= @promotion.name %></p>
-<p><%= t 'activerecord.attributes.promotion.description' %>:  <%= @promotion.description %> </p>
-<p><%= t 'activerecord.attributes.promotion.code' %>: <%= @promotion.code %> </p>
-<p><%= t 'activerecord.attributes.promotion.discount_rate' %>: <%= number_to_percentage(@promotion.discount_rate, precision: 2, separator: ',') %> </p>
-<p><%= t 'activerecord.attributes.promotion.coupon_quantity' %>: <%= @promotion.coupon_quantity %> </p>
-<p><%= t 'activerecord.attributes.promotion.expiration_date' %>: <%= l @promotion.expiration_date %> </p>
+<p><%= Promotion.human_attribute_name(:name)  %>: <%= @promotion.name %></p>
+<p><%= Promotion.human_attribute_name(:description) %>:  <%= @promotion.description %> </p>
+<p><%= Promotion.human_attribute_name(:code) %>: <%= @promotion.code %> </p>
+<p><%= Promotion.human_attribute_name(:discount_rate) %>: <%= number_to_percentage(@promotion.discount_rate, precision: 2, separator: ',') %> </p>
+<p><%= Promotion.human_attribute_name(:coupon_quantity) %>: <%= @promotion.coupon_quantity %> </p>
+<p><%= Promotion.human_attribute_name(:expiration_date) %>: <%= l @promotion.expiration_date %> </p>
 
 <% if flash[:notice] %>
     <%= flash[:notice] %>

@@ -1,9 +1,8 @@
 <% if @promotions.exists? %>
     <% @promotions.each do |promotion| %>
-        <p><%= t 'activerecord.attributes.promotion.name' %>: <%= link_to promotion.name, promotion_path(promotion) %></p>
-        <p><%= t 'activerecord.attributes.promotion.description' %>:  <%= promotion.description %> </p>
-        <p><%= t 'activerecord.attributes.promotion.discount_rate' %>: <%= number_to_percentage(promotion.discount_rate ) %> 
-        </p>
+        <p><%= t '.name' %> <%= link_to promotion.name, promotion_path(promotion) %></p>
+        <p><%= t '.description' %>  <%= promotion.description %></p>
+        <p><%= t '.discount_rate' %> <%= number_to_percentage(promotion.discount_rate ) %></p>
         <hr>
     <% end %>
 
