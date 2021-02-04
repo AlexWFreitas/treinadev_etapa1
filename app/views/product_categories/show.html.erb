@@ -1,17 +1,17 @@
-<h1>Detalhes da Categoria <%= @category.name %></h1>
+<h1><%= t '.details_of'  %><%= @category.name %></h1>
 <br>
-Nome: <%= @category.name %>
+<%= ProductCategory.human_attribute_name(:name) %>: <%= @category.name %>
 <br>
 <br>
-Código: <%= @category.code %>
+<%= ProductCategory.human_attribute_name(:code) %>: <%= @category.code %>
 <br>
 <br>
 
 <hr>
 
-<%= link_to "Editar categoria", edit_product_category_path(@category) %>
+<%= link_to (t '.edit'), edit_product_category_path(@category) %>
 
 <br>
 <br>
 
-<%= link_to "Voltar para categorias", product_categories_path %>
+<%= link_to (t '.back'), product_categories_path %>

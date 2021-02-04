@@ -1,3 +1,14 @@
 pt-BR:
   product_categories:
     collection_name: "Categorias"
+
+    index: 
+      title: "Categorias de Produto"
+      back: "Voltar"
+      create: "Registrar uma categoria de produto"
+      empty_warning: "Não existe uma categoria registrada no banco de dados."
+
+    show:
+      edit: "Editar categoria"
+      back: "Voltar para categorias"
+      details_of: "Detalhes da Categoria "

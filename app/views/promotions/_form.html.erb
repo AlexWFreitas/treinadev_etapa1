@@ -38,7 +38,7 @@
 
 <% if @promotion.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@promotion.errors.count, "error") %> have occurred:</h2>
+    <h2><%= pluralize(@promotion.errors.count, (t "promotions.error_occurred.one"), plural: (t "promotions.error_occurred.other")) %></h2>
 
     <ul>
       <% @promotion.errors.each do |error| %>

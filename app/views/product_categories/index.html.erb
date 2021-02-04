@@ -1,21 +1,21 @@
 <% if @categories.exists? %>
-    <h1>Categorias de Produto</h1>
+    <h1><%= t ".title" %></h1>
     <% @categories.each do |category| %>
         <%= link_to category.name, product_category_path(category) %>
         <br>
         <br>
     <% end %>
 <% else %>
-    <div class="warning">Não existe uma categoria registrada no banco de dados.</div>
+    <div class="warning"><%= t ".empty_warning" %></div>
 <% end %>
 
 <hr> 
 
 <div>
-    <%= link_to 'Registrar uma categoria de produto', new_product_category_path %>
+    <%= link_to (t ".create"), new_product_category_path %>
 
     <br>
     <br>
 
-    <%= link_to 'Voltar', root_path %>
+    <%= link_to (t ".back"), root_path %>
 <div>

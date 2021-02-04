@@ -21,6 +21,7 @@ feature 'Admin generates coupons' do
         expect(page).to have_content('NATAL10-0003')
         expect(page).to have_content('NATAL10-0100')
         expect(page).not_to have_content('NATAL10-0101')
+        expect(page).to have_content('Cupons da promoção')
     end
 
     # TODO: Generate test to hide button

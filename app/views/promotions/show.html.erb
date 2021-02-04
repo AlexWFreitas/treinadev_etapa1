@@ -8,11 +8,14 @@
 <% if flash[:notice] %>
     <%= flash[:notice] %>
     <br>
+<% end %>
+
+<% if @promotion.coupons.any? %>
+    <h2><%= t '.coupon_section' %></h2>
     <% @promotion.coupons.each do |coupon| %>
-        <%= coupon.code %>
+        <%= "#{coupon.code} (#{coupon.status.to_s.upcase})"%>
         <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
     <% end %>
-    
 <% end %>
 
 <p> <%= link_to (t '.generate_coupons'), generate_coupons_promotion_path(@promotion), method: :post %>

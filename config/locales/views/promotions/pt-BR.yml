@@ -5,7 +5,7 @@ pt-BR:
       name: "Nome:"
       description: "Descrição:"
       discount_rate: "Desconto:"
-      warning: "Nenhuma promoção cadastrada"
+      empty_warning: "Nenhuma promoção cadastrada"
       create: "Registrar uma promoção"
       back: "Voltar"
 
@@ -22,6 +22,11 @@ pt-BR:
       back: "Voltar"
       generate_coupons: "Emitir cupons"
       disable_coupon: "Desativar cupom"
+      coupon_section: "Cupons da promoção"
     
     generate_coupons:
       success: "Cupons gerados com sucesso"
+
+    error_occurred: 
+      one: "erro ocorreu"
+      other: "erros aconteceram"

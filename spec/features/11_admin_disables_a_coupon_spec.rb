@@ -9,7 +9,6 @@ feature 'Admin disables a coupon' do
         visit root_path
         click_on I18n.t ('promotions.collection_name')
         click_on promotion.name
-        click_on I18n.t ('promotions.show.generate_coupons')
         click_on I18n.t ('promotions.show.disable_coupon')
 
         expect(page).to have_content('ABC0001 (Inativo)')

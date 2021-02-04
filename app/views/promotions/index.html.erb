@@ -1,13 +1,13 @@
 <% if @promotions.exists? %>
     <% @promotions.each do |promotion| %>
-        <p><%= t '.name' %> <%= link_to promotion.name, promotion_path(promotion) %></p>
-        <p><%= t '.description' %>  <%= promotion.description %></p>
-        <p><%= t '.discount_rate' %> <%= number_to_percentage(promotion.discount_rate ) %></p>
+        <p><%= Promotion.human_attribute_name(:name)  %>: <%= link_to promotion.name, promotion_path(promotion) %></p>
+        <p><%= Promotion.human_attribute_name(:description)  %>: <%= promotion.description %></p>
+        <p><%= Promotion.human_attribute_name(:discount_rate)  %>: <%= number_to_percentage(promotion.discount_rate ) %></p>
         <hr>
     <% end %>
 
 <% else %>
-        <div class="warning"> <%= t '.warning' %></div>
+        <div class="warning"> <%= t '.empty_warning' %></div>
 <% end %>
 
 <p><%= link_to (t '.create'), new_promotion_path %></p>
