@@ -10,6 +10,7 @@
     <br>
     <% @promotion.coupons.each do |coupon| %>
         <%= coupon.code %>
+        <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
     <% end %>
     
 <% end %>

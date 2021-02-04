@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   resources :promotions, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     post 'generate_coupons', on: :member
   end
+
+  resources :coupons, only: [] do
+    post 'disable', on: :member
+  end
+
   resources :product_categories, only: %i[ index new create show edit update ] 
 end
