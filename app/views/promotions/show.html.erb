@@ -13,13 +13,14 @@
 <% if @promotion.coupons.any? %>
     <h2><%= t '.coupon_section' %></h2>
     <% @promotion.coupons.each do |coupon| %>
-        <%= "#{coupon.code} (#{t ".#{coupon.status}"})" %>
-        <% if coupon.active? %>
-            <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
-        <% end %>
-        <% if coupon.inactive? %>
-            <%= link_to (t '.enable_coupon'), enable_coupon_path(coupon), method: :post %> 
-        <% end %>
+        <div id="coupon-<%= coupon.id %>">
+            <%= "#{coupon.code} (#{t ".#{coupon.status}"})" %>
+            <% if coupon.active? %>
+                <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
+            <% elsif coupon.inactive? %>
+                <%= link_to (t '.enable_coupon'), enable_coupon_path(coupon), method: :post %> 
+            <% end %>
+        </div>
     <% end %>
 <% end %>
 
