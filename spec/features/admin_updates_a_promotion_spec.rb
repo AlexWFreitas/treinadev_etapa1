@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-feature 'Admin edits a promotion' do
+feature '.update' do
     scenario 'promotion gets updated' do
       Promotion.create!(name: 'Cyber Monday', coupon_quantity: 90,
                         description: 'Promoção de Cyber Monday',
