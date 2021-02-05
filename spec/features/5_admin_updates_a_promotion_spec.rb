@@ -19,7 +19,7 @@ feature 'Admin edits a promotion' do
       fill_in 'Descrição', with: 'Coronafest'
       fill_in 'Código', with: 'COVID21'
       fill_in 'Desconto', with: '100'
-      fill_in 'Quantidade de cupons', with: '200000'
+      fill_in 'Quantidade de cupons', with: '200'
       fill_in 'Data de término', with: '01/01/2022'
       click_on 'Atualizar promoção'
   
@@ -29,7 +29,7 @@ feature 'Admin edits a promotion' do
       expect(page).to have_content('COVID21')
       expect(page).to have_content('100')
       expect(page).to have_content('01/01/2022')
-      expect(page).to have_content('200000')
+      expect(page).to have_content('200')
       expect(page).to have_link('Voltar')
     end
 end

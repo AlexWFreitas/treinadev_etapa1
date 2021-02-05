@@ -21,8 +21,11 @@ pt-BR:
       delete_confirm: "Deseja deletar a promoção?"
       back: "Voltar"
       generate_coupons: "Emitir cupons"
+      enable_coupon: "Ativar cupom"
       disable_coupon: "Desativar cupom"
       coupon_section: "Cupons da promoção"
+      inactive: "Inativo"
+      active: "Ativo"
     
     generate_coupons:
       success: "Cupons gerados com sucesso"

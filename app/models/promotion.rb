@@ -3,7 +3,8 @@ class Promotion < ApplicationRecord
 
     validates :name, :code, :discount_rate, :expiration_date, :coupon_quantity, presence: true
     validates :name, :code, uniqueness: true
-    validates :discount_rate, :coupon_quantity,  numericality: true
+    validates :discount_rate, numericality: { less_than_or_equal_to: 100 }
+    validates :coupon_quantity,  numericality: { less_than: 10000 }
 
 
     def generate_coupons!

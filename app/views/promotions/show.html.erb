@@ -13,12 +13,21 @@
 <% if @promotion.coupons.any? %>
     <h2><%= t '.coupon_section' %></h2>
     <% @promotion.coupons.each do |coupon| %>
-        <%= "#{coupon.code} (#{(t "coupons.status.#{(coupon.status).to_s}")})" %>
-        <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
+        <%= "#{coupon.code} (#{t ".#{coupon.status}"})" %>
+        <% if coupon.active? %>
+            <%= link_to (t '.disable_coupon'), disable_coupon_path(coupon), method: :post %> 
+        <% end %>
+        <% if coupon.inactive? %>
+            <%= link_to (t '.enable_coupon'), enable_coupon_path(coupon), method: :post %> 
+        <% end %>
     <% end %>
 <% end %>
 
-<p> <%= link_to (t '.generate_coupons'), generate_coupons_promotion_path(@promotion), method: :post %>
+
+<% if @promotion.coupons.empty? %>
+    <p> <%= link_to (t '.generate_coupons'), generate_coupons_promotion_path(@promotion), method: :post %>
+<% end %>
+
 <p> <%= link_to (t '.edit'), edit_promotion_path(@promotion) %> </p>
 <p> <%= link_to (t '.delete'), promotion_path(@promotion),
                 method: :delete, data: { confirm: (t ".delete_confirm") } %> </p>
