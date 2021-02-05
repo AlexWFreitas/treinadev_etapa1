@@ -9,14 +9,19 @@ class Promotion < ApplicationRecord
 
     def generate_coupons!
         Coupon.transaction do
-            (1..coupon_quantity).each do |number| 
-                coupons.create!(code: "#{code}-#{'%04d' % number}")
-            end
+            #coupons.insert_all(generate_coupons_array)
+            coupons.import generate_coupons_array
         end
     end
 
     # Method to check if there are Coupons generated
     def coupons?
         coupons.any?
+    end
+
+    def generate_coupons_array
+        1.upto(coupon_quantity).inject([]) do |arr, number|
+            arr << { code: "#{code}-#{'%04d' % number}", created_at: Time.current, updated_at: Time.current }
+        end
     end
 end
