@@ -1,4 +1,5 @@
 class PromotionsController < ApplicationController
+    before_action :authenticate_user!
 
     def index
         @promotions = Promotion.all
@@ -52,6 +53,6 @@ class PromotionsController < ApplicationController
     private
 
     def promotion_params
-        params.require(:promotion).permit(:name, :description, :code, :discount_rate, :coupon_quantity, :expiration_date)
+        params.require(:promotion).permit(:name, :description, :code, :discount_rate, :coupon_quantity, :expiration_date, :user)
     end
 end
