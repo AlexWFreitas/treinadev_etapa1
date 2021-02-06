@@ -29,6 +29,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # ActiveRecord-Import adds bulk inserts using ActiveRecord
 gem 'activerecord-import'
 
+# Devise
+gem 'devise'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
