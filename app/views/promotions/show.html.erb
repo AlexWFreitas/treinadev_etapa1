@@ -5,11 +5,6 @@
 <p><%= Promotion.human_attribute_name(:coupon_quantity) %>: <%= @promotion.coupon_quantity %> </p>
 <p><%= Promotion.human_attribute_name(:expiration_date) %>: <%= l @promotion.expiration_date %> </p>
 
-<% if flash[:notice] %>
-    <%= flash[:notice] %>
-    <br>
-<% end %>
-
 <% if @promotion.coupons.any? %>
     <h2><%= t '.coupon_section' %></h2>
     <% @promotion.coupons.each do |coupon| %>

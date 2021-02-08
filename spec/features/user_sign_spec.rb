@@ -35,7 +35,9 @@ feature "user sign out" do
         end
 
         within('nav') do
-            expect(page).to have_content('Entrar')
+            expect(page).not_to have_link 'Sair'
+            expect(page).not_to have_content user.email
+            expect(page).to have_link 'Entrar'
         end
     end
 end
