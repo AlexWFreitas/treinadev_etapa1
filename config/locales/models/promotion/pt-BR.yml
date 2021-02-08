@@ -1,7 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      promotion: "promoção"
+      promotion: 
+        one: "promoção"
+        other: "promoções"
     attributes:
       promotion:
         name: "Nome"

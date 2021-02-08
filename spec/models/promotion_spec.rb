@@ -5,6 +5,22 @@ describe Promotion do
     it 'attributes cannot be blank' do
       promotion = Promotion.new
 
+      expect(promotion.valid?).to eq false
+    end
+
+    it 'description is optional' do
+      Promotion.create!(name: 'Natal', description: '',
+                        code: 'NATAL10', discount_rate: 10,
+                        coupon_quantity: 100, expiration_date: '22/12/2033')
+      promotion = Promotion.new(code: 'NATAL10')
+
+      expect(promotion.valid?).to eq true
+
+    end
+
+    it 'error messages are in portuguese' do
+      promotion = Promotion.new
+
       promotion.valid?
 
       expect(promotion.errors[:name]).to include('não pode ficar em branco')

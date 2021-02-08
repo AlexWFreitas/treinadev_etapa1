@@ -1,7 +1,7 @@
 <h1><%= t '.title' %></h1>
 <h3><%= t '.title_message' %></h3>
 
-<%= link_to (t 'promotions.collection_name'), promotions_path %>
+<%= link_to Promotion.model_name.human(count: 2).capitalize , promotions_path %>
 <br>
 <br>
-<%= link_to (t 'product_categories.collection_name'), product_categories_path %>
+<%= link_to ProductCategory.model_name.human(count: 2).capitalize , product_categories_path %>

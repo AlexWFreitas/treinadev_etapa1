@@ -30,6 +30,7 @@ pt-BR:
     generate_coupons:
       success: "Cupons gerados com sucesso"
 
-    error_occurred: 
-      one: "erro ocorreu"
-      other: "erros aconteceram"
+    form:
+      error_occurred: 
+        one: "erro ocorreu"
+        other: "erros aconteceram"

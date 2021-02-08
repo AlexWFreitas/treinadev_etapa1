@@ -1,7 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      product_category: "categoria"
+      product_category: 
+        one: "categoria"
+        other: "categorias"
     attributes:
       product_category:
         name: "Nome"
