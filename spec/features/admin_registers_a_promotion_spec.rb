@@ -9,6 +9,9 @@ feature 'Admin registers a promotion' do
   end
 
   scenario 'from index page' do
+    user = User.create!(email: 'alex123@gmail.com', password: '123456')
+
+    login_as user, scope: :user
     visit root_path
     click_on 'Promoções'
 
@@ -17,9 +20,9 @@ feature 'Admin registers a promotion' do
   end
 
   scenario 'successfully' do
-    user = User.create!(email: 'joao@email.com', password: '123456')
+    user = User.create!(email: 'alex@treinadev.com.br', password: '123456')
 
-    login_as user
+    login_as user, scope: :user
     visit root_path
     click_on 'Promoções'
     click_on 'Registrar uma promoção'

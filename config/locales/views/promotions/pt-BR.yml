@@ -26,6 +26,7 @@ pt-BR:
       coupon_section: "Cupons da promoção"
       inactive: "Inativo"
       active: "Ativo"
+      user_text: "Cadastrada por: "
     
     generate_coupons:
       success: "Cupons gerados com sucesso"

@@ -4,6 +4,7 @@
 <p><%= Promotion.human_attribute_name(:discount_rate) %>: <%= number_to_percentage(@promotion.discount_rate, precision: 2, separator: ',') %> </p>
 <p><%= Promotion.human_attribute_name(:coupon_quantity) %>: <%= @promotion.coupon_quantity %> </p>
 <p><%= Promotion.human_attribute_name(:expiration_date) %>: <%= l @promotion.expiration_date %> </p>
+<p><%= t '.user_text' %> <%= @promotion.user.email %> </p>
 
 <% if @promotion.coupons.any? %>
     <h2><%= t '.coupon_section' %></h2>

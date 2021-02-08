@@ -7,8 +7,8 @@ feature 'User sign in do' do
         visit root_path
         click_on 'Entrar'
         within('form') do
-            fill_in 'Email', with: user.email
-            fill_in 'Password', with: '123456'
+            fill_in 'E-mail', with: user.email
+            fill_in 'Senha', with: '123456'
             click_on 'Entrar'
         end
 
@@ -26,8 +26,8 @@ feature "user sign out" do
         visit root_path
         click_on 'Entrar'
         within('form') do
-            fill_in 'Email', with: user.email
-            fill_in 'Password', with: '123456'
+            fill_in 'E-mail', with: user.email
+            fill_in 'Senha', with: '123456'
             click_on 'Entrar'
         end
         within('nav') do
