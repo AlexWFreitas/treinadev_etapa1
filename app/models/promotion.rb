@@ -10,8 +10,10 @@ class Promotion < ApplicationRecord
 
     def generate_coupons!
         Coupon.transaction do
-            #coupons.insert_all(generate_coupons_array)
-            coupons.import generate_coupons_array
+            coupons.insert_all!(generate_coupons_array)
+            # The ActiveRecord-Import Gem adds bulk inserts method using ActiveRecord
+            # if you add 'gem activerecord-import' on Gemfile
+            # coupons.import generate_coupons_array
         end
     end
 

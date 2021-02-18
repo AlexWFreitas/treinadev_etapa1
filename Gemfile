@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # ActiveRecord-Import adds bulk inserts using ActiveRecord
-gem 'activerecord-import'
+# gem 'activerecord-import'
 
 # Devise
 gem 'devise'
