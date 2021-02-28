@@ -39,8 +39,12 @@ class Promotion < ApplicationRecord
         PromotionApproval.create(promotion: self, user: approval_user)
     end
 
+    def approved_at
+        promotion_approval&.created_at
+    end
+
     # Retorna o usuário da aprovação associada a promoção.
     def approver
-        promotion_approval.user
+        promotion_approval&.user
     end
 end

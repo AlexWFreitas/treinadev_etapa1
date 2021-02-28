@@ -12,8 +12,6 @@
 
 <% if @promotion.approved? %>
     <%= t '.approved_promotion' %>
-<% else %>
-    <%= t '.unapproved_promotion' %>
 <% end %>
 
 <% if @promotion.coupons.any? %>
