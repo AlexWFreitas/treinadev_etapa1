@@ -27,6 +27,9 @@ pt-BR:
       inactive: "Inativo"
       active: "Ativo"
       user_text: "Cadastrada por: "
+      approve_promotion: "Aprovar Promoção"
+      approved_promotion: "Promoção Aprovada"
+      unapproved_promotion: "Promoção Não Aprovada"
     
     generate_coupons:
       success: "Cupons gerados com sucesso"

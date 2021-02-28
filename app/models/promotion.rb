@@ -1,5 +1,6 @@
 class Promotion < ApplicationRecord
     has_many :coupons
+    has_one :promotion_approval
     belongs_to :user
 
     validates :name, :code, :discount_rate, :expiration_date, :coupon_quantity, presence: true
@@ -26,5 +27,20 @@ class Promotion < ApplicationRecord
         1.upto(coupon_quantity).inject([]) do |arr, number|
             arr << { code: "#{code}-#{'%04d' % number}", created_at: Time.current, updated_at: Time.current }
         end
+    end
+
+    # Se encontrar um promotion, então está aprovada. Se não encontrar, vai retornar nil, logo é false.
+    def approved?
+        promotion_approval
+    end
+
+    # Aprova o usuário
+    def approve!(approval_user)
+        PromotionApproval.create(promotion: self, user: approval_user)
+    end
+
+    # Retorna o usuário da aprovação associada a promoção.
+    def approver
+        promotion_approval.user
     end
 end

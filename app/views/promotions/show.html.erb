@@ -6,6 +6,16 @@
 <p><%= Promotion.human_attribute_name(:expiration_date) %>: <%= l @promotion.expiration_date %> </p>
 <p><%= t '.user_text' %> <%= @promotion.user.email %> </p>
 
+<% if @promotion.user != current_user %>
+    <%= link_to (t '.approve_promotion'), approve_promotion_path, method: :post %>
+<% end %>
+
+<% if @promotion.approved? %>
+    <%= t '.approved_promotion' %>
+<% else %>
+    <%= t '.unapproved_promotion' %>
+<% end %>
+
 <% if @promotion.coupons.any? %>
     <h2><%= t '.coupon_section' %></h2>
     <% @promotion.coupons.each do |coupon| %>
@@ -19,6 +29,7 @@
         </div>
     <% end %>
 <% end %>
+
 
 
 <% if @promotion.coupons.empty? %>

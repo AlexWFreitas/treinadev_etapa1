@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :product_categories, only: %i[ index new create show edit update ] 
   
   resources :promotions, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
-    post 'generate_coupons', on: :member
+    member do
+      post 'generate_coupons'
+      post 'approve'
+    end
   end
 
   resources :coupons, only: [] do
