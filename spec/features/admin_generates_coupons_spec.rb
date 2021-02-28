@@ -6,7 +6,9 @@ feature 'Admin generates coupons' do
         user = User.create!(email: 'alex123@gmail.com', password: '123456')
         promotion = Promotion.create!(  name: 'Natal', code: 'NATAL10', description: 'Feliz Natal', coupon_quantity: 100, 
                             discount_rate: 20, expiration_date: '22/12/2033', user: user)
+        approver = User.create!(email: 'alexa123@gmail.com', password: '123456')
 
+        promotion.approve!(approver)
 
         # Act
         login_as user, scope: :user
@@ -30,12 +32,29 @@ feature 'Admin generates coupons' do
         user = User.create!(email: 'alex123@gmail.com', password: '123456')
         promotion = Promotion.create!(  name: 'Natal', code: 'NATAL10', description: 'Feliz Natal', coupon_quantity: 100, 
                             discount_rate: 20, expiration_date: '22/12/2033', user: user)
-        
+        approver = User.create!(email: 'alexa123@gmail.com', password: '123456')
+
+        promotion.approve!(approver)
+
         visit root_path
         login_as user, scope: :user
         click_on 'Promoções'
         click_on promotion.name
         click_on 'Emitir cupons'
+
+        expect(page).not_to have_link('Emitir cupons')
+    end
+
+    scenario 'hide button if promotion was not approved' do
+        user = User.create!(email: 'alex123@gmail.com', password: '123456')
+        promotion = Promotion.create!(  name: 'Natal', code: 'NATAL10', description: 'Feliz Natal', coupon_quantity: 100, 
+                            discount_rate: 20, expiration_date: '22/12/2033', user: user)
+        
+        
+        visit root_path
+        login_as user, scope: :user
+        click_on 'Promoções'
+        click_on promotion.name
 
         expect(page).not_to have_link('Emitir cupons')
     end
