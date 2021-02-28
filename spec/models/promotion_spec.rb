@@ -131,6 +131,8 @@ describe Promotion do
       promotion = Promotion.create!(name: 'Carnaval', description: 'Promoção de Carnaval',
                         code: 'CARNAVAL10', discount_rate: 10,
                         coupon_quantity: 100, expiration_date: '22/12/2033', user: user)
+      approver = User.create!(email: 'alex12354@gmail.com', password: '123456')
+      promotion.approve!(approver)
 
       promotion.generate_coupons!
 
@@ -147,6 +149,8 @@ describe Promotion do
       promotion = Promotion.create!(name: 'Carnaval', description: 'Promoção de Carnaval',
                         code: 'CARNAVAL10', discount_rate: 10,
                         coupon_quantity: 100, expiration_date: '22/12/2033', user: user)
+      approver = User.create!(email: 'alex12354@gmail.com', password: '123456')
+      promotion.approve!(approver)
       promotion.coupons.create!(code: 'CARNAVAL10-0030')
 
       expect { promotion.generate_coupons! }.to raise_error(ActiveRecord::RecordNotUnique)
