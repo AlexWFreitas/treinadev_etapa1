@@ -8,7 +8,7 @@ feature 'Admin can edit a category' do
         click_on 'Categorias'
         click_on 'Cozinha'
         click_on 'Editar categoria'
-        fill_in 'Nome', with: 'Eletrodomésticos'
+        fill_in 'Categorias', with: 'Eletrodomésticos'
         fill_in 'Código', with: 'eletro'
         click_on 'Atualizar categoria'
 

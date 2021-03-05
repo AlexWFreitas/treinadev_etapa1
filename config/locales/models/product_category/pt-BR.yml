@@ -6,5 +6,5 @@ pt-BR:
         other: "categorias"
     attributes:
       product_category:
-        name: "Nome"
+        name: "Categorias"
         code: "Código"

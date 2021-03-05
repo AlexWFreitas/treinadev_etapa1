@@ -1,3 +1,9 @@
+<h2>Categorias de Produtos</h2>
+
+<% @promotion.product_categories.each do |pc| %>
+  <%= pc.name %> - <%= pc.code %>
+<% end %> 
+
 <p><%= Promotion.human_attribute_name(:name)  %>: <%= @promotion.name %></p>
 <p><%= Promotion.human_attribute_name(:description) %>:  <%= @promotion.description %> </p>
 <p><%= Promotion.human_attribute_name(:code) %>: <%= @promotion.code %> </p>

@@ -32,6 +32,12 @@
     </div>
     <br>
     <div>
+        <% if @product_categories != nil %>
+            <%= f.collection_check_boxes :product_category_ids, @product_categories , :id, :name %>
+        <% end %>
+    </div>
+    <br>
+    <div>
         <%= f.submit %>
     </div>
 <% end %>

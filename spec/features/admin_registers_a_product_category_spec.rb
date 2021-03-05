@@ -6,10 +6,10 @@ feature 'Admin creates a category' do
         click_on 'Categorias'
         click_on 'Registrar uma categoria de produto'
 
-        fill_in 'Nome', with: 'Eletrodomésticos'
+        fill_in 'Categorias', with: 'Eletrodomésticos'
         fill_in 'Código', with: 'eletro'
 
-        expect(page).to have_field('Nome', with: 'Eletrodomésticos')
+        expect(page).to have_field('Categorias', with: 'Eletrodomésticos')
         expect(page).to have_field('Código', with: 'eletro')
     end
 
@@ -18,7 +18,7 @@ feature 'Admin creates a category' do
         click_on 'Categorias'
         click_on 'Registrar uma categoria de produto'
 
-        fill_in 'Nome', with: 'Eletrodomésticos'
+        fill_in 'Categorias', with: 'Eletrodomésticos'
         fill_in 'Código', with: 'eletro'
 
         click_on 'Criar categoria'

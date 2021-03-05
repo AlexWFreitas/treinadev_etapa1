@@ -1,6 +1,10 @@
 class Promotion < ApplicationRecord
     has_many :coupons
     has_one :promotion_approval
+
+    has_many :product_category_promotions
+    has_many :product_categories, through: :product_category_promotions
+
     belongs_to :user
 
     validates :name, :code, :discount_rate, :expiration_date, :coupon_quantity, presence: true

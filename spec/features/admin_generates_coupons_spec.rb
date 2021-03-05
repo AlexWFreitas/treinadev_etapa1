@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Admin generates coupons' do
-    scenario 'of a promotion' do
+    scenario 'if promotion approved' do
         # Arrange
         user = User.create!(email: 'alex123@gmail.com', password: '123456')
         promotion = Promotion.create!(  name: 'Natal', code: 'NATAL10', description: 'Feliz Natal', coupon_quantity: 100, 
@@ -45,7 +45,7 @@ feature 'Admin generates coupons' do
         expect(page).not_to have_link('Emitir cupons')
     end
 
-    scenario 'hide button if promotion was not approved' do
+    scenario 'hide button if promotion was not approved yet' do
         user = User.create!(email: 'alex123@gmail.com', password: '123456')
         promotion = Promotion.create!(  name: 'Natal', code: 'NATAL10', description: 'Feliz Natal', coupon_quantity: 100, 
                             discount_rate: 20, expiration_date: '22/12/2033', user: user)
