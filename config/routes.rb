@@ -16,4 +16,10 @@ Rails.application.routes.draw do
     post 'disable', on: :member
     post 'enable', on: :member
   end
+
+  namespace 'api', defaults: { format: :json } do
+    namespace 'v1' do
+      resources :coupons, only: [:show]
+    end
+  end
 end
