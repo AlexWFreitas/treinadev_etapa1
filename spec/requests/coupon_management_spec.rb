@@ -18,9 +18,28 @@ describe 'Coupon management' do
 
 
             # Assert
+            json_response = JSON.parse(response.body, symbolize_names: true)
+
+            # "{ code: 'bla', valor: '100'} => json_response[:code], json_response[:valor]"
+
             expect(response).to have_http_status(200)
-            expect(response.body).to include('10')
-            expect(response.body).to include('22/12/2033')
+            expect(json_response[:status]).to eq('active')
+            expect(json_response[:promotion][:discount_rate]).to eq("10.0")
+            expect(json_response[:promotion][:code]).to eq(promotion.code)
         end
+
+        it 'should return 404 if coupon code does not exist' do
+            get '/api/v1/coupons/blabla404'
+
+            expect(response).to have_http_status(404)
+        end
+    end
+
+    context 'POST coupon usage' do
+        it 'should burn a coupon' do
+            # post 'api/v1/coupons/blablabla/burn'
+        end
+        pending "Adicionar exemplo de queimação de cupom através de API"
+
     end
 end
